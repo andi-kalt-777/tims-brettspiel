@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://api.deezer.com; style-src 'self'; img-src 'self' data: blob:; media-src https://*.dzcdn.net blob: data:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#14161f">
+<meta name="description" content="Karte scannen, Hörprobe verdeckt abspielen, Jahr raten.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tims Spiel">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Tims Brettspiel</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="kopf">
+    <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" class="logo-platte"/><circle cx="24" cy="24" r="14" class="logo-rille"/><circle cx="24" cy="24" r="6" class="logo-mitte"/></svg>
+    <div>
+      <h1>Tims Brettspiel</h1>
+      <p class="unterzeile">Karte scannen, zuhören, Jahr raten</p>
+    </div>
+  </header>
+
+  <!-- Start -->
+  <section id="s-start" class="schritt aktiv">
+    <button id="b-scan" class="knopf gross">Karte scannen</button>
+    <label class="knopf leise" for="foto">Foto statt Kamera</label>
+    <input id="foto" type="file" accept="image/*" capture="environment" hidden>
+    <p class="hinweis">Titel und Interpret werden nie angezeigt. Die Hörprobe dauert 30 Sekunden und läuft in Schleife.</p>
+    <button id="b-install" class="knopf leise" hidden>Als App installieren</button>
+    <p id="ios-hinweis" class="hinweis" hidden>Als App installieren: unten auf <b>Teilen</b> tippen, dann <b>Zum Home-Bildschirm</b>.</p>
+  </section>
+
+  <!-- Kamera -->
+  <section id="s-scan" class="schritt">
+    <div class="kamera">
+      <video id="video" playsinline muted></video>
+      <div class="rahmen" aria-hidden="true"></div>
+    </div>
+    <p id="scan-text" class="hinweis mitte">QR-Code in den Rahmen halten</p>
+    <button id="b-abbruch" class="knopf leise">Abbrechen</button>
+  </section>
+
+  <!-- Song -->
+  <section id="s-song" class="schritt">
+    <div id="anzeige" class="anzeige" aria-live="polite">
+      <div class="wellen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p id="song-text" class="status">Karte erkannt</p>
+      <div class="fortschritt"><div id="balken"></div></div>
+    </div>
+    <button id="b-play" class="knopf gross">Abspielen</button>
+    <button id="b-weiter" class="knopf">Nächste Karte scannen</button>
+    <a id="a-spotify" class="knopf leise" hidden target="_blank" rel="noopener noreferrer">In Spotify öffnen (zeigt den Titel)</a>
+  </section>
+
+  <p id="meldung" class="meldung" role="status" hidden></p>
+</main>
+<canvas id="leinwand" hidden></canvas>
+<audio id="audio" preload="auto"></audio>
+<script src="karten.js"></script>
+<script src="jsQR.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
