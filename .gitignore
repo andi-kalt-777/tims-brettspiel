@@ -1,0 +1,12 @@
+# Dieser Ordner ist zugleich die veröffentlichte Website: nur App-Dateien gehören hinein.
+.env*
+.claude/
+*.local.json
+*.json
+*.py
+*.csv
+*.xlsx
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store

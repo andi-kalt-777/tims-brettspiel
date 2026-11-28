@@ -4,14 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://api.deezer.com; style-src 'self'; img-src 'self' data: blob:; media-src https://*.dzcdn.net blob: data:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://api.deezer.com/track/; style-src 'self'; img-src 'self'; media-src https://*.dzcdn.net blob:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="theme-color" content="#14161f">
-<meta name="description" content="Karte scannen, Hörprobe verdeckt abspielen, Jahr raten.">
+<meta name="description" content="Zeitsprung, das Musikquiz: Karte scannen, Hörprobe verdeckt abspielen, Jahr raten.">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Tims Spiel">
+<meta name="apple-mobile-web-app-title" content="Zeitsprung">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Tims Brettspiel</title>
+<title>Zeitsprung · Musikquiz</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,8 +23,8 @@
   <header class="kopf">
     <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" class="logo-platte"/><circle cx="24" cy="24" r="14" class="logo-rille"/><circle cx="24" cy="24" r="6" class="logo-mitte"/></svg>
     <div>
-      <h1>Tims Brettspiel</h1>
-      <p class="unterzeile">Karte scannen, zuhören, Jahr raten</p>
+      <h1>Zeitsprung</h1>
+      <p class="unterzeile">Musikquiz: Karte scannen, zuhören, Jahr raten</p>
     </div>
   </header>
 
@@ -35,6 +36,15 @@
     <p class="hinweis">Titel und Interpret werden nie angezeigt. Die Hörprobe dauert 30 Sekunden und läuft in Schleife.</p>
     <button id="b-install" class="knopf leise" hidden>Als App installieren</button>
     <p id="ios-hinweis" class="hinweis" hidden>Als App installieren: unten auf <b>Teilen</b> tippen, dann <b>Zum Home-Bildschirm</b>.</p>
+    <details class="datenschutz">
+      <summary>Datenschutz</summary>
+      <p>Private, nicht kommerzielle Seite für ein Spiel in Familie und Freundeskreis. Sie setzt keine eigenen Cookies, nutzt kein Tracking und speichert nichts über dich.</p>
+      <p>Kamerabild und Fotos werden nur auf deinem Gerät ausgewertet und nicht übertragen.</p>
+      <p>Die Seite liegt bei GitHub Pages (GitHub Inc., USA). GitHub verarbeitet dabei deine IP-Adresse.</p>
+      <p>Erst wenn du eine Karte scannst, fragt dein Browser die Hörprobe bei Deezer (Deezer SA, Paris) ab. Deezer erhält dabei deine IP-Adresse und die Titelnummer und kann eigene Cookies setzen.</p>
+      <p>Der Spotify-Link öffnet Spotify nur, wenn du ihn antippst. Damit die App schnell startet, speichert dein Browser die App-Dateien.</p>
+      <p>Kontakt: über GitHub, <a href="https://github.com/Kaltmacher-Apps" target="_blank" rel="noopener noreferrer">github.com/Kaltmacher-Apps</a>.</p>
+    </details>
   </section>
 
   <!-- Kamera -->
